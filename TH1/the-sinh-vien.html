@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thẻ Sinh Viên - Đỗ Minh Trí</title>
+    <style>
+        /* Đặt lại lề cơ bản */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+
+        /* Vùng chứa thẻ chính */
+        .id-card {
+            width: 650px;
+            height: 400px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 25px;
+            overflow: hidden;
+        }
+
+        /* Cột text dọc bên viền trái */
+        .vertical-website {
+            position: absolute;
+            left: -25px;
+            bottom: 80px;
+            transform: rotate(-90deg);
+            color: #1a5b8f;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Header: Logo & Tên Trường --- */
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .logo-placeholder {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #1a5b8f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1a5b8f;
+            font-size: 10px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .uni-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .uni-name-vi {
+            color: #1a5b8f;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .uni-name-en {
+            color: #4a86b8;
+            font-size: 13px;
+        }
+
+        /* --- Phần thân thẻ --- */
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex: 1;
+            padding-left: 20px; /* Chừa chỗ cho chữ dọc */
+        }
+
+        /* Cột trái: Chip, Tên, Thông tin */
+        .left-col {
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+        }
+
+        .chip {
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            border-radius: 6px;
+            border: 1px solid #b89728;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Mũi tên xanh trên chip */
+        .chip::before {
+            content: '▲';
+            color: #4caf50;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+
+        .student-name {
+            color: #1a5b8f;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .info-table {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .info-row {
+            display: flex;
+        }
+
+        .info-row .label {
+            width: 120px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .info-row .value {
+            color: #222;
+            font-weight: bold;
+        }
+
+        /* Cột phải: Loại thẻ, Số thẻ */
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 40%;
+        }
+
+        .card-type {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .card-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a5b8f;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .card-valid {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card-valid span {
+            margin-left: 10px;
+        }
+
+        /* --- Footer: Logo, QR, Ảnh --- */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bottom-left-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .napas-logo {
+            font-size: 24px;
+            font-weight: bold;
+            font-style: italic;
+            color: #1f3a93;
+        }
+
+        .qr-placeholder {
+            width: 50px;
+            height: 50px;
+            background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #fff 25%, #fff 75%, #000 75%, #000);
+            background-position: 0 0, 5px 5px;
+            background-size: 10px 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #ccc;
+        }
+
+        .student-photo {
+            width: 75px;
+            height: 100px;
+            background-color: #5dade2; /* Giả lập phông xanh */
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .bank-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #008445; /* Màu Vietcombank */
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="id-card">
+        <div class="vertical-website">http://hou.edu.vn</div>
+
+        <div class="header">
+            <div class="logo-placeholder">HOU</div>
+            <div class="uni-info">
+                <div class="uni-name-vi">TRƯỜNG ĐẠI HỌC MỞ HÀ NỘI</div>
+                <div class="uni-name-en">HANOI OPEN UNIVERSITY</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-col">
+                <div class="chip"></div>
+                <div class="student-name">ĐỖ MINH TRÍ</div>
+                
+                <div class="info-table">
+                    <div class="info-row">
+                        <span class="label">NGÀY SINH:</span>
+                        <span class="value">25/07/2006</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">HỆ ĐÀO TẠO:</span>
+                        <span class="value">Chính quy</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">NGÀNH HỌC:</span>
+                        <span class="value">CÔNG NGHỆ THÔNG TIN</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">KHÓA HỌC:</span>
+                        <span class="value">2024-2029</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">MÃ SINH VIÊN:</span>
+                        <span class="value">24A1001D0405</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="card-type">THẺ SINH VIÊN</div>
+                <div class="card-number">97043633 78177521 175</div>
+                <div class="card-valid">Hiệu lực: 10/24 <span>10/30</span></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="bottom-left-group">
+                <div class="napas-logo">napas</div>
+                <div class="qr-placeholder"></div>
+                <div class="student-photo">Ảnh Thẻ</div>
+            </div>
+            <div class="bank-logo">Vietcombank</div>
+        </div>
+    </div>
+
+</body>
+</html>
