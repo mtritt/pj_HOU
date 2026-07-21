@@ -1,0 +1,393 @@
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+body{
+    color : #333;
+    background-color: #fff;
+    line-height : 1.6;
+    font-family : 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: #fff;
+    position: relative; 
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: opacity 0.3s ease;
+}
+
+.menu-toggle:hover {
+    opacity: 0.6;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 25px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #888;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.navbar .right span {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar .right span:hover {
+    transform: scale(1.1);
+}
+
+.slider-container {
+    position : relative;
+    width: 100%;
+    height : 55vh; 
+    overflow : hidden;
+    background-color: #f4f4f4;
+}
+
+.slide {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width: 100%;
+    height : 100%;
+    opacity : 0;
+    visibility : hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.banner1-content,
+.banner2-content,
+.banner3-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 500px;
+    z-index: 2;
+}
+
+.banner1-content h2,
+.banner2-content h2,
+.banner3-content h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #222;
+}
+
+.view-product {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4px;
+    font-size: 13px;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.view-product:hover {
+    opacity: 0.5;
+}
+
+/* Nút bấm mũi tên chuyển ảnh */
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.prev-btn { left: 40px; }
+.next-btn { right: 40px; }
+
+/* Các chấm tròn chuyển slide ở đáy banner */
+.dots-container {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #333;
+}
+
+.store-container {
+    padding: 60px 50px;
+}
+
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.store-header h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.filter-btn {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px 25px;
+}
+
+.product-card1,
+.product-card2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-wrapper {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    mix-blend-mode: multiply; /* Giúp tách nền ảnh sản phẩm tiệp vào nền xám nhạt */
+    transition: transform 0.4s ease;
+}
+
+.product-card1:hover .img-wrapper img,
+.product-card2:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.product-info .name {
+    color: #000;
+    font-size : 15px;
+}
+
+.product-info .heart {
+    cursor: pointer;
+    color: #999;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.product-info .heart:hover {
+    color: #ff5a5a; /* Đổi màu hồng nhẹ khi rê chuột vào tim */
+}
+
+.price {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+
+footer {
+    padding: 60px 50px 40px 50px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.nav-footer-top {
+    margin-bottom: 25px;
+}
+
+.nav-footer-top a {
+    text-decoration: none;
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.inspiration-text {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.inspiration-text a {
+    color: #222;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 17px;
+}
+
+.lorem-text {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.nav-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #dbdbdb;
+    padding-top: 30px;
+}
+
+.footer-column-left {
+    max-width: 450px;
+}
+
+.footer-about-left{
+    color : #000;
+    margin-bottom : 5px;
+    font-size : 15px;
+    font-weight: 500;
+}
+
+.footer-column-left p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.7;
+}
+
+.footer-column-right {
+    text-align: right;
+}
+
+.footer-column-right p {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar, .store-container, footer {
+        padding: 20px;
+    }
+    
+    .slider-container {
+        height: 60vh; 
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .nav-footer-bottom {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .footer-column-right {
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        z-index: 100;
+    }
+}

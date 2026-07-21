@@ -1,0 +1,46 @@
+.box-container{
+    border : 1px solid black;
+    padding : 20px;
+    display : inline-block;
+    font-family : 'Times New Roman', Times, serif;
+    font-size : 18px;
+    min-width : 400px;
+}
+
+.row{
+    margin-bottom : 10px;
+    display : flex;
+    align-items: center;
+}
+
+.row label{
+    margin-right: 10px;
+}
+
+.action-row{
+    text-align: right;
+    margin-top : 20px;
+}
+
+.action-row button{
+    margin-left: 10px;
+    padding : 5px 15px;
+    font-size : 16px ;
+    font-family: 'Times New Roman', Times, serif;
+    cursor : pointer;
+}
+
+#rowThemmoi{
+    display : none;
+}
+
+#btnLuu{
+    display : none;
+}
+
+#txtHang {
+    width: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 2px;
+}

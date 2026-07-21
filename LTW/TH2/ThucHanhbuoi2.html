@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "container">
+        <h1 class = 'title'>BIỂU MẪU ĐĂNG KÍ</h1>
+        <div class="content">
+            <div class = "name-input format-input">
+                <label for="">Họ và Tên</label>
+                <input type="text" placeholder = 'Nhập họ và tên' >
+            </div>
+            <div class = "mail-input format-input">
+                <label for="">Email</label>
+                <input type="text" placeholder = 'Nhập email' >
+            </div>
+            <div class = 'phone-date'>
+                <div class = 'phone-input format-input'>
+                    <label for="">Số điện thoại</label>
+                    <input type="text" placeholder = 'Số điện thoại'>    
+                </div>
+                <div class = 'date-input format-input'>
+                    <label for="">Ngày sinh</label>
+                    <input type = "date">
+                </div> 
+            </div>
+            <div class = 'gender-selection'>
+                <label for="">Giới tính</label>
+                <div class = 'option'>
+                    <label><input type = 'radio' value = 'male' name = 'gender' checked >Nam</label>
+                    <label><input type = 'radio' value = 'female' name = 'gender'>Nữ</label>
+                </div>
+            </div>
+            <div class = 'course-selection'>
+                <label for="course">Chọn khoá học</label>
+                <div class = 'course'>
+                    <select class = 'choose-course'>
+                        <option value = "">Country</option>
+                        <option value = 'vn'>Việt Nam</option>
+                        <option value = 'us'>Mỹ</option>
+                        <option value = 'uk'>Anh</option>
+                        <option value = 'japan'>Nhật Bản</option>
+                    </select>
+                </div>
+            </div>
+            <div class = 'button'>
+                <button type = 'reset' class = 'btn btn-nhaplai'>NHẬP LẠI</button>
+                <button type = 'submit' class = 'btn btn-dangky'>ĐĂNG KÝ</button>
+            </div>
+            <div class="table-container">
+                <hr class="top-divider">
+                
+                <h2 class="section-title">ĐÃ ĐĂNG KÝ</h2>
+
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Môn học</th>
+                            <th>Giảng viên</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Lập trình web</td>
+                            <td>Nguyễn Văn A</td>
+                            <td><a href="#">Hủy đăng ký</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Lập trình di động</td>
+                            <td>Nguyễn Văn A</td>
+                            <td><a href="#">Hủy đăng ký</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Thiết kế web</td>
+                            <td>Nguyễn Văn A</td>
+                            <td><a href="#">Hủy đăng ký</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Cơ sở dữ liệu</td>
+                            <td>Nguyễn Văn A</td>
+                            <td><a href="#">Hủy đăng ký</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 20px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px 12px;
+    text-align: left;
+}
+th {
+    background-color: #f9f9f9;
+}
+
+.form-container {
+    border: 1px solid black;
+    padding: 20px;
+    width: 450px;
+    box-sizing: border-box;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.form-group label {
+    width: 120px; 
+    font-weight: bold;
+}
+.form-group input {
+    flex: 1;
+    padding: 4px 8px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #777;
+}
+.action-row {
+    text-align: right;
+    margin-top: 20px;
+}
+.action-row button {
+    padding: 5px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}

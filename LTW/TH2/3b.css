@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+
+h1 {
+    background-color: #ff5a13; 
+    color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.footer {
+    background-color: #0b82b6; 
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    gap: 30px; 
+}
+
+.left-sidebar {
+    grid-column: span 3;
+}
+
+.content {
+    grid-column: span 6;
+}
+
+.sidebar-right {
+    grid-column: span 3;
+}
+
+.menu a {
+    display: block;
+    background-color: #4cb5e3; 
+    color: #ffffff; 
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.menu a:hover{
+    background-color: #ff5a13;
+}
+
+.category-title {
+    color: #ff5a13;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.post {
+    margin-bottom: 30px;
+}
+
+.post-title a {
+    color: #4cb5e3;
+    font-size: 18px;
+}
+
+.post p {
+    color: #333333;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: block;
+    text-align: right;
+    color: #ff5a13;
+    font-weight: bold;
+}
+
+.post-title a:hover, 
+.read-more:hover {
+    color: #d13d00;
+    text-decoration: underline;
+}
+
+.sidebar-right img {
+    width: 100%; 
+    border: 5px solid #4cb5e3; 
+}
+
+@media screen and (max-width: 768px) {
+    .left-sidebar, 
+    .content, 
+    .sidebar-right {
+        grid-column: span 12;
+    }
+}
+
+@media print {
+    body, h1, .footer, .menu a {
+        background-color: #ffffff !important;
+        background-image: none !important;
+    }
+    
+    h1, .footer p, .menu a, .category-title, .post-title a, .read-more {
+        color: #000000 !important;
+    }
+
+    .menu a {
+        border: 1px solid #000000;
+        margin-bottom: 2px;
+    }
+    a {
+        text-decoration: none !important;
+    }
+}

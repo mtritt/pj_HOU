@@ -1,0 +1,369 @@
+/* RESET & VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-light-blue: #EBF1FB;
+    --bg-white: #FFFFFF;
+    --text-dark-blue: #0F1B4C;
+    --text-gray-blue: #687690;
+    --primary-blue: #0689FF;
+    --btn-dark-blue: #1F284F;
+    --font-main: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark-blue);
+    background-color: #FAFAFA; /* Màu nền nhẹ cho các section màu trắng */
+    overflow-x: hidden; /* Ngăn scroll ngang */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--btn-dark-blue);
+    color: white;
+}
+
+.btn-dark {
+    background-color: var(--btn-dark-blue);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* 1. HERO SECTION */
+.hero-section {
+    background-color: var(--bg-light-blue);
+    padding-bottom: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: var(--text-dark-blue);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sign-in {
+    font-weight: 500;
+    color: var(--text-dark-blue);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text .subtitle {
+    color: var(--text-gray-blue);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-dark-blue);
+}
+
+.hero-text .description {
+    color: var(--text-gray-blue);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 450px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 2. TRUSTED BY SECTION */
+.trusted-section {
+    background-color: var(--bg-white);
+    padding: 80px 0;
+}
+
+.trusted-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.trusted-header h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.trusted-header p {
+    color: var(--text-gray-blue);
+}
+
+.rating-info {
+    text-align: right;
+}
+
+.stars {
+    color: #FFC107;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.rating-info p {
+    color: var(--text-gray-blue);
+    font-size: 14px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.company-logo {
+    color: #B0B5C9;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Amazon logo to hơn và nổi bật hơn */
+.active-logo {
+    color: #A1A8BE;
+    background: white;
+    padding: 15px 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    font-size: 32px; /* Tăng kích thước chữ cho Amazon */
+}
+
+/* 3. HOW IT WORKS SECTION */
+.how-it-works-section {
+    background-color: var(--bg-white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.how-it-works-header {
+    margin-bottom: 60px;
+}
+
+/* Dải trang trí nhỏ - không dùng border */
+.decorator-line {
+    width: 50px;
+    height: 4px;
+    background-color: var(--text-dark-blue);
+    margin: 0 auto 15px auto;
+    border-radius: 2px;
+}
+
+.how-it-works-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.how-it-works-header p {
+    color: var(--text-gray-blue);
+    line-height: 1.6;
+}
+
+.how-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.how-card {
+    padding: 30px;
+}
+
+.icon-wrapper {
+    font-size: 40px;
+    color: #F8B64C; /* Màu icon vàng cam */
+    margin-bottom: 20px;
+}
+
+.how-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.link-blue {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.center-btn {
+    text-align: center;
+}
+
+/* 4. FEATURED PROPERTIES SECTION (Ảnh 2 - Liền mạch) */
+.featured-section {
+    background-color: var(--bg-light-blue);
+    padding: 80px 0;
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.featured-header h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.featured-header p {
+    color: var(--text-gray-blue);
+}
+
+.view-all {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.property-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.property-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.property-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.address {
+    color: #A1A8BE;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-dark-blue);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.features span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.features i {
+    color: var(--primary-blue);
+}
+
+@media (max-width: 992px) {
+    .hero-text h1 { font-size: 40px; }
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-text .description { margin: 0 auto 30px; }
+    .nav-links { display: none; } 
+    .trusted-header { flex-direction: column; text-align: center; gap: 20px; }
+    .rating-info { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .how-cards {
+        grid-template-columns: 1fr;
+    }
+    .property-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .logos-container {
+        justify-content: center;
+    }
+}

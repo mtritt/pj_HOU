@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Table & Events</title>
+    <link rel="stylesheet" href="style(2).css">
+</head>
+<body>
+    <table id="tblCPU">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên VXL</th>
+                <th>Hãng sx</th>
+                <th>Ngày ra mắt</th>
+                <th>Giá (vnđ)</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyCPU"></tbody>
+    </table>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="txtTenVXL">Tên VXL</label>
+            <input type="text" id="txtTenVXL" placeholder="Ví dụ: Core i5 7200">
+        </div>
+        <div class="form-group">
+            <label for="txtHang">Hãng</label>
+            <input type="text" id="txtHang" placeholder="Ví dụ: Intel">
+        </div>
+        <div class="form-group">
+            <label for="txtNgayramat">Ngày ra mắt</label>
+            <input type="text" id="txtNgayramat" placeholder="dd/mm/yyyy">
+        </div>
+        <div class="form-group">
+            <label for="txtGia">Giá</label>
+            <input type="text" id="txtGia" placeholder="Ví dụ: 5500000">
+        </div>
+        
+        <div class="action-row">
+            <button id="btnThem">Thêm</button>
+            <button id="btnHuy">Huỷ</button>
+        </div>
+    </div>
+
+    <script src="csript(2).js"></script>
+</body>
+</html>
